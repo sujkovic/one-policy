@@ -1,9 +1,76 @@
 .Home {
-  background-color: rgb(136, 70, 70);
+  padding-top: 96px;
+  background-color: #ebebf2;
   color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
   flex: 1;
   height: 100%;
+}
+
+.home-main {
+  display: flex;
+  gap: 64px;
+}
+
+.home-main-text {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.home-main-text-title {
+  width: 450px;
+  font-size: 48px;
+  font-weight: 600;
+}
+
+.home-main-img {
+  padding-top: 104px;
+  height: 300px;
+}
+
+.home-main-categories {
+  display: flex;
+  flex-wrap: wrap;
+  width: 600px;
+  gap: 16px;
+}
+
+.home-main-category {
+  height: 84px;
+  width: 260px;
+  border: 2px rgb(219, 219, 219) solid;
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 12px;
+  gap: 12px;
+}
+
+.home-main-category:hover {
+  cursor: pointer;
+  border: 2px rgb(255, 120, 30) solid;
+}
+
+.home-main-subtext {
+  padding-left: 12px;
+  font-size: 0.8rem;
+}
+
+.home-sub {
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 64px 0;
+  gap: 232px;
+}
+
+.home-sub-right {
+  display: flex;
+  gap: 48px;
 }

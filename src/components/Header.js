@@ -6,15 +6,15 @@ const Header = (props) => {
       <div className="header-left">
         <div className="header-logo">One Policy</div>
         <div className="header-left-nav">
-          <span>Life</span>
-          <span>Home</span>
-          <span>Auto</span>
-          <span>Disability</span>
+          <span className="header-left-item">Life</span>
+          <span className="header-left-item">Home</span>
+          <span className="header-left-item">Auto</span>
+          <span className="header-left-item">Disability</span>
         </div>
       </div>
       <div className="header-right">
-        <div className="about-us-header">About us</div>
-        <button>Sign up</button>
+        <div className="about-us-header header-left-item">About us</div>
+        <button className="signup-button">Sign up</button>
       </div>
     </header>
   );
