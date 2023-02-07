@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./InitialForm.css";
+import { Link } from "react-router-dom";
 
 var today = new Date();
 // function isValidUSZip(sZip) {
@@ -7,6 +8,15 @@ var today = new Date();
 //  }
 
 export default function InitialForm() {
+    const [male, setMale] = useState(false);
+    const [female, setFemale] = useState(false);
+
+
+
+    useEffect(() => {
+
+    }, [])
+
     return(
         <div className="form-container">
             <div className="initialForm">
@@ -15,14 +25,18 @@ export default function InitialForm() {
                     <div className="gender-div">
                         <label>Gender:</label>
                         <div className="gender-inputs">
-                            <input className="gender-input"
+                            <button className="gender-input"
+                                onClick={() => {
+                                    setMale(true)
+                                }}
                                 type="button"
-                                required
                             />
-                            <input className="gender-input"
+                            <button className="gender-input"
+                                onClick={() => {
+                                    setFemale(true)
+                                }}
                                 type="button"
-                                required
-                            />
+                                />
                         </div>
                     </div>
                     
@@ -56,6 +70,15 @@ export default function InitialForm() {
                             type="number"
                             required
                         />
+                    </div>
+                    
+                    <div className="submit-div">
+                        <button id="button">
+                            <span>Submit!</span>
+                            <svg viewBox="-5 -5 110 110" preserveAspectRatio="none" aria-hidden="true">
+                                <path d="M0,0 C0,0 100,0 100,0 C100,0 100,100 100,100 C100,100 0,100 0,100 C0,100 0,0 0,0"/>
+                            </svg>
+                        </button>
                     </div>
                 </form>
             </div>
