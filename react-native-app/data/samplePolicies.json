@@ -1,0 +1,25 @@
+{
+    "policies": [
+        {
+            "insurer": "State Farm",
+            "type": "life",
+            "monthly": "$20",
+            "end_date": "24-03-2029",
+            "coverage": "$200,000"
+        },
+        {
+            "insurer": "State Farm",
+            "type": "auto",
+            "monthly": "$10",
+            "end_date": "05-09-2025",
+            "coverage": "$30,000"
+        },
+        {
+            "insurer": "All State",
+            "type": "homie",
+            "monthly": "$80",
+            "end_date": "14-12-2032",
+            "coverage": "$600,000"
+        }
+    ]
+}
