@@ -1,8 +1,10 @@
 .form-container {
-    margin: 1%;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    background-color: white;
+    height: 85vh;
 }
 
 .initialForm {

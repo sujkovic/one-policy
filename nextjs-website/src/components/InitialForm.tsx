@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./InitialForm.css";
-import { Link } from "react-router-dom";
 
 var today = new Date();
 // function isValidUSZip(sZip) {

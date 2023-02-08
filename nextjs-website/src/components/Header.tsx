@@ -1,20 +1,21 @@
 import "./Header.css";
 import React from "react";
+import Link from "next/link";
+import transp_logo from '../images/transp_logo.png'
+import Image from "next/image";
+
 export default function Header() {
   return (
     <header>
       <div className="header-left">
-        <div className="header-logo">One Policy</div>
-        <div className="header-left-nav">
-          <span className="header-left-item">Life</span>
-          <span className="header-left-item">Home</span>
-          <span className="header-left-item">Auto</span>
-          <span className="header-left-item">Disability</span>
-        </div>
+        <Link href="/" className="header-logo">
+          <Image alt="small-logo" src={transp_logo} className="logo" />  
+          nePolicy
+        </Link>
       </div>
       <div className="header-right">
-        <div className="about-us-header header-left-item">About us</div>
-        <button className="signup-button">Sign up</button>
+        <Link href="/about" className="about-us-header header-left-item">About us</Link>
+        <Link href="/signup" className="signup-button">Sign up</Link>
       </div>
     </header>
   );

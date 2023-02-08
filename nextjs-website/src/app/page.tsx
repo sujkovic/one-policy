@@ -1,11 +1,8 @@
 'use client';
-import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from './page.module.css'
-import React, {useState, useEffect} from 'react';
-import header_logo from '../images/header_logo.png'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import React from 'react';
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -13,7 +10,6 @@ export default function Home() {
 
   return (
       <main className={styles.main}>
-        <Header />
         <div className={styles.Home}>
           <div className={styles.home_main}>
             <div className={styles.home_main_text}>
@@ -25,12 +21,11 @@ export default function Home() {
                 Select a product to compare quotes:
               </div>
               <div className={styles.home_main_categories}>
-                  <button
+                  <Link
+                  href="/life"
                   className={styles.home_main_category_life}
-                  onClick={() => {
-                    
-                  }}
-                  >Life</button>
+                  >Life
+                  </Link>
                 <div className={styles.home_main_category}>
                   <div className="font-semibold ">Home</div>
                 </div>
@@ -48,8 +43,6 @@ export default function Home() {
 
           </div>
         </div>
-        {/* <Image alt="Main" className={styles.home_main_img_rect} src={header_logo} /> */}
-        <Footer />
       </main>
   )
 }

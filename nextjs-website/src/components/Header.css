@@ -1,5 +1,5 @@
 header {
-  height: 84px;
+  height: 8vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -7,7 +7,7 @@ header {
   color: rgb(0, 0, 0);
   gap: 6px;
   font-size: 20px;
-  padding: 0 144px;
+  padding: 0 20px;
 }
 
 .header-left,
@@ -22,12 +22,19 @@ header {
 .signup-button {
   height: 36px;
   width: 96px;
-  border: 2px black solid;
-  border-radius: 24px;
+  border: 2px #FCC900 solid;
+  background-color: #FCC900;
+  color: #0254ee;
+  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding-bottom: 2px;
+}
+
+.signup-button:hover {
+  height: 40px;
+  width: 100px;
 }
 
 .signup-button:hover {
@@ -36,8 +43,24 @@ header {
 
 .header-left-item:hover {
   cursor: pointer;
+  font-weight: 600;
 }
 
 .header-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   font-weight: 600;
+}
+
+.header-logo:hover {
+  font-weight: 500;
+  color: #0254ee;
+}
+
+.logo {
+  max-width: 12vw;
+  margin-bottom: -6px;
+  margin-right: -4vw;
 }
