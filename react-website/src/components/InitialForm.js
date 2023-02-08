@@ -44,21 +44,26 @@ export default function InitialForm() {
                     </div>
                     
                     <div className="dob-div">
-                        <label>Date of birth:</label>
+                        <label className="block font-latoBold text-sm pb-2">
+                            Date of birth:
+                        </label>
                         <div className="date-inputs">
                             <input className="date-input"
+                                placeholder="dd"
                                 type="number"
                                 required
                                 min={1}
                                 max={12}
                             />
                             <input className="date-input"
+                                placeholder="mm"
                                 type="number"
                                 required
                                 min={1}
                                 max={31}
                             />
                             <input className="date-input"
+                                placeholder="yyyy"
                                 type="number"
                                 required
                                 min={1900}
