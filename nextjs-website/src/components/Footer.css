@@ -1,9 +1,15 @@
-.Footer {
-  height: 32px;
-  width: 100%;
+.footer {
   display: flex;
-  justify-content: center;
-  position: fixed;
-  bottom: 0;
-  left: 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0254ee;
+  padding: 20px;
+  width: 100%;
+  height: 7vh;
+}
+
+.img {
+  height:100%;
+  object-fit: contain;
 }

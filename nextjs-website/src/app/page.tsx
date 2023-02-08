@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
 
   return (
-      <main>
+      <main className={styles.main}>
         <Header />
         <div className={styles.Home}>
           <div className={styles.home_main}>
@@ -45,11 +45,10 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className={styles.logoContainer}>
-              <Image alt="Main" className={styles.home_main_img} src={header_logo} />
-            </div>
+
           </div>
         </div>
+        {/* <Image alt="Main" className={styles.home_main_img_rect} src={header_logo} /> */}
         <Footer />
       </main>
   )

@@ -1,9 +1,0 @@
-.Footer {
-  height: 32px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-}
