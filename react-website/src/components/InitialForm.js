@@ -8,35 +8,38 @@ var today = new Date();
 //  }
 
 export default function InitialForm() {
-    const [male, setMale] = useState(false);
+    const [male, setMale] = useState(true);
     const [female, setFemale] = useState(false);
-
 
 
     useEffect(() => {
 
     }, [])
 
-    return(
+    return (
         <div className="form-container">
             <div className="initialForm">
                 <h1> Tell us about you.</h1>
                 <form>
                     <div className="gender-div">
-                        <label>Gender:</label>
-                        <div className="gender-inputs">
-                            <button className="gender-input"
+                        <span>Gender:</span>
+                        <div className="male-div">
+                            <input 
+                                name="male"
                                 onClick={() => {
                                     setMale(true)
                                 }}
                                 type="button"
                             />
-                            <button className="gender-input"
+                        </div>
+                        <div className="female-div">
+                            <input 
+                                name="female"
                                 onClick={() => {
                                     setFemale(true)
                                 }}
                                 type="button"
-                                />
+                            />
                         </div>
                     </div>
                     
@@ -73,7 +76,7 @@ export default function InitialForm() {
                     </div>
                     
                     <div className="submit-div">
-                        <button id="button">
+                        <button className="btn">
                             <span>Submit!</span>
                             <svg viewBox="-5 -5 110 110" preserveAspectRatio="none" aria-hidden="true">
                                 <path d="M0,0 C0,0 100,0 100,0 C100,0 100,100 100,100 C100,100 0,100 0,100 C0,100 0,0 0,0"/>
