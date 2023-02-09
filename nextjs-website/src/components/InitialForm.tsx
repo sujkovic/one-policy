@@ -1,5 +1,5 @@
 import Head from "next/head";
-import formImage from "../assets/transp_logo.png";
+import formImage from "../assets/header_logo.png";
 import Image from "next/image";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -44,7 +44,7 @@ export default function InitialForm({typeOfInsurance}: {typeOfInsurance: string}
       <main>
         <form
           onSubmit={formik.handleSubmit}
-          className="bg-white flex w-screen font-latoRegular border-gray-50 border-2"
+          className="bg-white flex w-screen font-latoRegular border-gray-200 border-2"
         >
           <div className="flex-1 text-gray-700 p-20">
             <h1 className="text-3xl pb-2 font-latoBold">
@@ -121,7 +121,7 @@ export default function InitialForm({typeOfInsurance}: {typeOfInsurance: string}
               </div>
               <button
                 type="submit"
-                className="bg-teal-500 font-latoBold text-sm text-white py-3 mt-6 rounded-lg w-full"
+                className="continue font-latoBold text-sm text-white py-3 mt-6 rounded-lg w-full"
               >
                 Continue
               </button>
@@ -129,7 +129,7 @@ export default function InitialForm({typeOfInsurance}: {typeOfInsurance: string}
           </div>
           <div className="relative flex-1">
             <Image
-              className=" object-cover rounded-lg"
+              className="object-cover"
               fill
               priority
               src={formImage}
