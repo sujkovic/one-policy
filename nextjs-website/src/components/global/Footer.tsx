@@ -1,6 +1,6 @@
 import "./Footer.css";
 import React from "react";
-import header_logo from '../images/header_logo.png'
+import header_logo from '../../assets/header_logo.png'
 import Image from "next/image";
 import Link from "next/link";
 export default function Footer() {

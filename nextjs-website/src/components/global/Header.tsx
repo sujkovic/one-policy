@@ -1,7 +1,7 @@
 import "./Header.css";
 import React from "react";
 import Link from "next/link";
-import transp_logo from '../images/transp_logo.png'
+import transp_logo from '../../assets/transp_logo.png'
 import Image from "next/image";
 
 export default function Header() {

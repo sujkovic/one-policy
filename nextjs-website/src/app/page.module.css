@@ -92,6 +92,7 @@
   width: 260px;
   border: 2px rgb(219, 219, 219) solid;
   background-color: #0254ee;
+  /* background-color: #74959A; */
   border-radius: 8px;
   display: flex;
   justify-content: flex-start;
@@ -114,7 +115,7 @@
 }
 
 .home_main_subtext {
-  padding-left: 12px;
+  /* padding-left: 12px; */
   font-size: 0.8rem;
 }
 

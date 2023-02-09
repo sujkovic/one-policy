@@ -22,8 +22,8 @@ header {
 .signup-button {
   height: 36px;
   width: 96px;
-  border: 2px #FCC900 solid;
-  background-color: #FCC900;
+  border: 2px #0254ee solid;
+  background-color: white;
   color: #0254ee;
   border-radius: 10px;
   display: flex;
