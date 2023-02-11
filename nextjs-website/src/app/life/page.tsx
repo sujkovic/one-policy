@@ -182,11 +182,37 @@
 //     </m.div>
 //   );
 // }
-"use client";
-import InitialForm from "@/components/InitialForm";
 
-export default function lifeFormPage() {
+"use client"
+import React from 'react';
+import { Field } from 'formik';
+
+export default function LifePage() {
+  const { label, name, options, ...rest } = props;
   return (
-    <InitialForm typeOfInsurance="life"/>
+    <div>
+      <label htmlFor={name}>{label}</label>
+      <Field name={name} {...rest} >
+        {
+          ({ field }) => {
+            return options.map(option => {
+              return (
+                <React.Fragment key={option.key}>
+                  <input
+                    type='radio'
+                    id={option.id}
+                    {...field}
+                    value={option.value}
+                    checked={field.value === option.value}
+                  />
+                  <label htmlFor={option.id}>{option.key}</label>
+
+                </React.Fragment>
+              );
+            })
+          }
+        }
+      </Field>
+    </div>
   );
 }

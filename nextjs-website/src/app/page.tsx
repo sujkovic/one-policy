@@ -22,9 +22,9 @@ export default function Home() {
               </div>
               <div className={styles.home_main_categories}>
                   <Link
-                  href="/life"
-                  className={styles.home_main_category_life}
-                  >Life
+                    href="/life"
+                    className={styles.home_main_category_life}
+                    >Life
                   </Link>
                 <div className={styles.home_main_category}>
                   <div className="font-semibold ">Home</div>
