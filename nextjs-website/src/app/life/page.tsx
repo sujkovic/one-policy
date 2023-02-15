@@ -2,17 +2,32 @@
 import React from 'react';
 import { Formik, Form, Field } from 'formik';
 
-interface Values {
+export interface Values {
   gender: string;
-  dobMonth: string;
-  dobDay: string;
-  dobYear: string;
+  age: number;
   zipCode: string;
+  term_len: number;
+  face_amt: number;
+  tobacco: string;
+};
+
+interface InitialValues {
+  gender: string,
+  dobMonth: string,
+  dobDay: string,
+  dobYear: string,
+  zipCode: string,
+}
+
+// dateString format = "YYYY-MM-DD"
+function getAge(dateString: string) {
+  var birthday = +new Date(dateString);
+  return ~~((Date.now() - birthday) / (31557600000));
 }
 
 const LifeForm: React.FC = () => {
   return (
-    <Formik<Values>
+    <Formik<InitialValues>
       initialValues={{
         gender: '',
         dobMonth: '',
@@ -22,7 +37,16 @@ const LifeForm: React.FC = () => {
       }}
       onSubmit={(values, actions) => {
         console.log(values);
+        const valuesSoFar: Values = {
+          gender: values.gender,
+          age: getAge(values.dobYear + "-" + values.dobMonth + "-" + values.dobDay),
+          zipCode: values.zipCode,
+          term_len: 0,
+          face_amt: 0,
+          tobacco: ''
+        }
         actions.setSubmitting(false);
+        console.log(valuesSoFar);
       }}
     >
       {({ isSubmitting }) => (
@@ -76,7 +100,7 @@ const LifeForm: React.FC = () => {
           )}
         </Field>
         <button type="submit" disabled={isSubmitting}>
-          Submit
+          Continue
         </button>
       </Form>
     )}
