@@ -1,0 +1,59 @@
+.main {
+    display: flex;
+    background-color: #ebebf2;
+    flex: 1;
+    height: 85vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.genderGroup {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.buttonLeft {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    padding: 1vh 2vw;
+    width: 30vw;
+    border-style: dashed;
+    border-width: 2px;
+    border-color: black;
+    margin: 10px 10px 10px 0;
+}
+
+.buttonRight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    padding: 1vh 2vw;
+    width: 30vw;
+    border-style: dashed;
+    border-width: 2px;
+    border-color: black;
+    margin: 10px 0 10px 10px;
+}
+
+.buttonLeft:hover {
+    border-color: #0254ee;
+    cursor: pointer;
+}
+
+.buttonRight:hover {
+    border-color: #0254ee;
+    cursor: pointer;
+}
+
+.buttonLeft:focus {
+    background-color: lightblue;
+}
+
+.buttonRight:focus {
+    background-color: lightblue;
+}

@@ -1,6 +1,8 @@
 "use client";
-import React from 'react';
-import { Formik, Form, Field } from 'formik';
+import React, { useState } from 'react';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+import styles from './page.module.css'
 
 export interface Values {
   gender: string;
@@ -12,7 +14,6 @@ export interface Values {
 };
 
 interface InitialValues {
-  gender: string,
   dobMonth: string,
   dobDay: string,
   dobYear: string,
@@ -26,85 +27,97 @@ function getAge(dateString: string) {
 }
 
 const LifeForm: React.FC = () => {
+  // M == male, F == female
+  const [gender, setGender] = useState('M');
+
   return (
-    <Formik<InitialValues>
-      initialValues={{
-        gender: '',
-        dobMonth: '',
-        dobDay: '',
-        dobYear: '',
-        zipCode: '',
-      }}
-      onSubmit={(values, actions) => {
-        console.log(values);
-        const valuesSoFar: Values = {
-          gender: values.gender,
-          age: getAge(values.dobYear + "-" + values.dobMonth + "-" + values.dobDay),
-          zipCode: values.zipCode,
-          term_len: 0,
-          face_amt: 0,
-          tobacco: ''
-        }
-        actions.setSubmitting(false);
-        console.log(valuesSoFar);
-      }}
-    >
-      {({ isSubmitting }) => (
-        <Form>
-          <Field name="gender">
-            {({ field, form }: { field: any; form: any }) => (
-              <div>
-                <label htmlFor="gender">Gender:</label>
-                <input type="radio" id="gender" name="gender" value="M" {...field} />
-                M
-                <input type="radio" id="gender" name="gender" value="F" {...field} />
-                F
-                {form.errors.gender && form.touched.gender && <div>{form.errors.gender}</div>}
+    <div className={styles.main}>
+      <div className={styles.form}>
+        <Formik<InitialValues>
+          initialValues={{
+            dobMonth: '',
+            dobDay: '',
+            dobYear: '',
+            zipCode: '',
+          }}
+          onSubmit={(values, actions) => {
+            const valuesSoFar: Values = {
+              gender: gender,
+              age: getAge(values.dobYear + "-" + values.dobMonth + "-" + values.dobDay),
+              zipCode: values.zipCode,
+              term_len: 0,
+              face_amt: 0,
+              tobacco: ''
+            }
+            actions.setSubmitting(false);
+            console.log(valuesSoFar);
+          }}
+        >
+          {({ isSubmitting }) => (
+            <Form>
+              <div className={styles.genderGroup}>
+                <button
+                  onClick={() => {
+                    setGender('M')
+                  }} 
+                  className={styles.buttonLeft}>
+                    Male
+                </button>
+
+                <button
+                  onClick={() => {
+                    setGender('F')
+                  }} 
+                  className={styles.buttonRight}>
+                    Female
+                </button>
+
               </div>
-            )}
-          </Field>
-          <div>
-            <label htmlFor="dobMonth">Date of Birth:</label>
-            <Field type="text" name="dobMonth">
-              {({ field, form }: { field: any; form: any }) => (
-                <div>
-                  <input id="dobMonth" {...field} placeholder="MM" />
-                  {form.errors.dobMonth && form.touched.dobMonth && <div>{form.errors.dobMonth}</div>}
-                </div>
-              )}
-            </Field>
-            <Field type="text" name="dobDay">
-              {({ field, form }: { field: any; form: any }) => (
-                <div>
-                  <input id="dobDay" {...field} placeholder="DD" />
-                  {form.errors.dobDay && form.touched.dobDay && <div>{form.errors.dobDay}</div>}
-                </div>
-              )}
-            </Field>
-            <Field type="text" name="dobYear">
-              {({ field, form }: { field: any; form: any }) => (
-                <div>
-                  <input id="dobYear" {...field} placeholder="YYYY" />
-                  {form.errors.dobYear && form.touched.dobYear && <div>{form.errors.dobYear}</div>}
-                </div>
-              )}
-            </Field>
-        </div>
-        <Field type="text" name="zipCode">
-          {({ field, form }: { field: any; form: any }) => (
-            <div>
-              <label htmlFor="zipCode">ZIP Code:</label>
-              <input id="zipCode" {...field} />
-              {form.errors.zipCode && form.touched.zipCode && <div>{form.errors.zipCode}</div>}
+
+              <div>
+                <label htmlFor="dobMonth">Date of Birth:</label>
+                <Field type="text" name="dobMonth">
+                  {({ field }: { field: any }) => (
+                    <div>
+                      <input id="dobMonth" {...field} placeholder="MM" />
+                      <ErrorMessage name='dobMonth' />
+                    </div>
+                  )}
+                </Field>
+                <Field type="text" name="dobDay">
+                  {({ field }: { field: any }) => (
+                    <div>
+                      <input id="dobDay" {...field} placeholder="DD" />
+                      <ErrorMessage name='dobDay' />
+                    </div>
+                  )}
+                </Field>
+                <Field type="text" name="dobYear">
+                  {({ field }: { field: any }) => (
+                    <div>
+                      <input id="dobYear" {...field} placeholder="YYYY" />
+                      <ErrorMessage name='dobYear' />
+                    </div>
+                  )}
+                </Field>
             </div>
-          )}
-        </Field>
-        <button type="submit" disabled={isSubmitting}>
-          Continue
-        </button>
-      </Form>
-    )}
-  </Formik>
+            <Field type="text" name="zipCode">
+              {({ field }: { field: any }) => (
+                <div>
+                  <label htmlFor="zipCode">ZIP Code:</label>
+                  <input id="zipCode" {...field} />
+                  <ErrorMessage name='zipCode' />
+                </div>
+              )}
+            </Field>
+            <button type="submit" disabled={isSubmitting}>
+              Continue
+            </button>
+          </Form>
+        )}
+        </Formik>
+      </div>
+    </div>
   );
 }
 

@@ -1,14 +1,14 @@
 import React from 'react';
 import { Field } from 'formik';
 
-const RadioButton = (props) => {
+const RadioButton = (props: any) => {
   const { label, name, options, ...rest } = props;
   return (
     <div>
-      <label htmlFor={name}>{label}</label>
+      <label>{label}</label>
       <Field name={name} {...rest} >
         {
-          ({ field }) => {
+          ({ field }: {field: any}) => {
             return options.map(option => {
               return (
                 <React.Fragment key={option.key}>
