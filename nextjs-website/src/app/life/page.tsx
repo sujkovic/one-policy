@@ -59,6 +59,7 @@ const LifeForm: React.FC = () => {
           >
             {({ isSubmitting }) => (
               <Form>
+                <label className={styles.label}>Gender</label>
                 <div className={styles.genderGroup}>
                   <button
                     onClick={() => {
@@ -90,38 +91,41 @@ const LifeForm: React.FC = () => {
                   </button>
                 </div>
 
-                <div>
-                  <label htmlFor="dobMonth">Date of Birth:</label>
-                  <Field type="text" name="dobMonth">
-                    {({ field }: { field: any }) => (
-                      <div>
-                        <input id="dobMonth" {...field} placeholder="MM" />
-                        <ErrorMessage name='dobMonth' />
-                      </div>
-                    )}
-                  </Field>
-                  <Field type="text" name="dobDay">
-                    {({ field }: { field: any }) => (
-                      <div>
-                        <input id="dobDay" {...field} placeholder="DD" />
-                        <ErrorMessage name='dobDay' />
-                      </div>
-                    )}
-                  </Field>
-                  <Field type="text" name="dobYear">
-                    {({ field }: { field: any }) => (
-                      <div>
-                        <input id="dobYear" {...field} placeholder="YYYY" />
-                        <ErrorMessage name='dobYear' />
-                      </div>
-                    )}
-                  </Field>
+                <div className={styles.dobContainer}>
+                  <label className={styles.label} htmlFor="dobMonth">Date of Birth:</label>
+                  <div className={styles.dobInputs}>
+                    <Field type="text" name="dobMonth">
+                      {({ field }: { field: any }) => (
+                        <div>
+                          <input className={styles.dobInput} id="dobMonth" {...field} placeholder="MM" />
+                          <ErrorMessage name='dobMonth' />
+                        </div>
+                      )}
+                    </Field>
+                    <Field type="text" name="dobDay">
+                      {({ field }: { field: any }) => (
+                        <div>
+                          <input className={styles.dobInput} id="dobDay" {...field} placeholder="DD" />
+                          <ErrorMessage name='dobDay' />
+                        </div>
+                      )}
+                    </Field>
+                    <Field type="text" name="dobYear">
+                      {({ field }: { field: any }) => (
+                        <div>
+                          <input className={styles.dobInput} id="dobYear" {...field} placeholder="YYYY" />
+                          <ErrorMessage name='dobYear' />
+                        </div>
+                      )}
+                    </Field>
+                  </div>
               </div>
+
               <Field type="text" name="zipCode">
                 {({ field }: { field: any }) => (
-                  <div>
-                    <label htmlFor="zipCode">ZIP Code:</label>
-                    <input id="zipCode" {...field} />
+                  <div className={styles.zipCodeContainer}>
+                    <label className={styles.label} htmlFor="zipCode">ZIP Code:</label>
+                    <input className={styles.zipCodeInput} id="zipCode" {...field} />
                     <ErrorMessage name='zipCode' />
                   </div>
                 )}
