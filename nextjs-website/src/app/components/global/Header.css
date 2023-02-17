@@ -22,9 +22,9 @@ header {
 .signup-button {
   height: 36px;
   width: 96px;
-  border: 2px #0254ee solid;
+  border: 2px #2253e5 solid;
   background-color: white;
-  color: #0254ee;
+  color: #2253e5;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -56,7 +56,7 @@ header {
 
 .header-logo:hover {
   font-weight: 500;
-  color: #0254ee;
+  color: #2253e5;
 }
 
 .logo {

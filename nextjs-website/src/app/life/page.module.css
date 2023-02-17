@@ -21,9 +21,10 @@
     color: black;
     padding: 1vh 2vw;
     width: 30vw;
-    border-style: dashed;
+    border-style: solid;
     border-width: 2px;
     border-color: black;
+    border-radius: 8px;
     margin: 10px 10px 10px 0;
 }
 
@@ -34,26 +35,44 @@
     color: black;
     padding: 1vh 2vw;
     width: 30vw;
-    border-style: dashed;
+    border-style: solid;
     border-width: 2px;
     border-color: black;
+    border-radius: 8px;
     margin: 10px 0 10px 10px;
 }
 
 .buttonLeft:hover {
-    border-color: #0254ee;
+    border-color: #2253e5;
     cursor: pointer;
 }
 
 .buttonRight:hover {
-    border-color: #0254ee;
+    border-color: #2253e5;
     cursor: pointer;
 }
 
-.buttonLeft:focus {
+.buttonLeftFocus {
+    border-color: #2253e5;
     background-color: lightblue;
 }
 
-.buttonRight:focus {
+.buttonRightFocus {
+    border-color: #2253e5;
     background-color: lightblue;
+}
+
+.title {
+    color: black;
+    font-size: xxx-large;
+    font-weight: 500;
+}
+
+.container {
+    max-width: 700px;
+    padding-bottom: 30vh; 
+}
+
+.form {
+    margin-top: 1vh;
 }
