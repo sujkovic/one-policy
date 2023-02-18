@@ -1,5 +1,5 @@
 header {
-  height: 8vh;
+  height: 6vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -7,7 +7,7 @@ header {
   color: rgb(0, 0, 0);
   gap: 6px;
   font-size: 20px;
-  padding: 0 20px;
+  /* padding: 0 15px; */
 }
 
 .header-left,
@@ -17,6 +17,7 @@ header {
   justify-content: center;
   align-items: center;
   gap: 32px;
+  padding-right: 15px;
 }
 
 .signup-button {
@@ -50,7 +51,7 @@ header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   font-weight: 600;
 }
 
@@ -61,6 +62,8 @@ header {
 
 .logo {
   max-width: 12vw;
+  max-height: 14vh;
   margin-bottom: -6px;
   margin-right: -4vw;
+  object-fit: contain;
 }

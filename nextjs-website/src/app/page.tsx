@@ -18,7 +18,7 @@ export default function Home() {
                 A hub for your insurance policies.
               </div>
               <div className={styles.home_main_text_subtitle}>
-                Select a product to compare quotes:
+                Select a product to calculate quote estimates:
               </div>
               <div className={styles.home_main_categories}>
                   <Link

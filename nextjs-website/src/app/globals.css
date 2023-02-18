@@ -36,7 +36,16 @@
     #00000010,
     #00000010,
     #00000080
+    
   );
+
+  --input-p-tb: 10px 0px;
+  --input-b-w: 1px;
+  --input-b-c: black;
+  --input-b-r: 8px;
+  --input-b-s: solid;
+  --input-bg: #ebebf2;
+  --input-t-a: center;
 
   --callout-rgb: 238, 240, 241;
   --callout-border-rgb: 172, 175, 176;

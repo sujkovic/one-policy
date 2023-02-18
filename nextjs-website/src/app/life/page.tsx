@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import styles from './page.module.css'
+import { useRouter } from "next/navigation";
 
 export interface Values {
   gender: string;
@@ -32,6 +33,11 @@ const LifeForm: React.FC = () => {
   const [maleActive, setMaleActive] = useState(true);
   const [femaleActive, setFemaleActive] = useState(false);
 
+  const router = useRouter();
+  const handleLink = () => {
+    router.push('/life/more-details');
+  };
+
   return (
     <div className={styles.main}>
       <div className={styles.container}>
@@ -59,41 +65,43 @@ const LifeForm: React.FC = () => {
           >
             {({ isSubmitting }) => (
               <Form>
-                <label className={styles.label}>Gender</label>
-                <div className={styles.genderGroup}>
-                  <button
-                    onClick={() => {
-                      setGender('M');
-                      setMaleActive(true);
-                      setFemaleActive(false);
-                    }}
-                    className={
-                      maleActive ? 
-                      `${styles.buttonLeftFocus} ${styles.buttonLeft}` 
-                      : 
-                      styles.buttonLeft}>
-                      Male
-                  </button>
+                <div className={styles.genderContainer}>
+                  <label className={styles.label}>Gender</label>
+                  <div className={styles.genderGroup}>
+                    <button
+                      onClick={() => {
+                        setGender('M');
+                        setMaleActive(true);
+                        setFemaleActive(false);
+                      }}
+                      className={
+                        maleActive ? 
+                        `${styles.buttonLeftFocus} ${styles.buttonLeft}` 
+                        : 
+                        styles.buttonLeft}>
+                        Male
+                    </button>
 
-                  <button
-                    onClick={() => {
-                      setGender('F');
-                      setMaleActive(false);
-                      setFemaleActive(true);
-                    }} 
-                    className={
-                      femaleActive ? 
-                      `${styles.buttonRightFocus} ${styles.buttonRight}` 
-                      : 
-                      styles.buttonRight
-                      }>
-                      Female
-                  </button>
+                    <button
+                      onClick={() => {
+                        setGender('F');
+                        setMaleActive(false);
+                        setFemaleActive(true);
+                      }} 
+                      className={
+                        femaleActive ? 
+                        `${styles.buttonRightFocus} ${styles.buttonRight}` 
+                        : 
+                        styles.buttonRight
+                        }>
+                        Female
+                    </button>
+                  </div>
                 </div>
 
                 <div className={styles.dobContainer}>
-                  <label className={styles.label} htmlFor="dobMonth">Date of Birth:</label>
-                  <div className={styles.dobInputs}>
+                  <label className={styles.label} htmlFor="dobMonth">Date of Birth</label>
+                  <div className={styles.dobInputContainer}>
                     <Field type="text" name="dobMonth">
                       {({ field }: { field: any }) => (
                         <div>
@@ -124,15 +132,23 @@ const LifeForm: React.FC = () => {
               <Field type="text" name="zipCode">
                 {({ field }: { field: any }) => (
                   <div className={styles.zipCodeContainer}>
-                    <label className={styles.label} htmlFor="zipCode">ZIP Code:</label>
+                    <label className={styles.label} htmlFor="zipCode">ZIP Code</label>
                     <input className={styles.zipCodeInput} id="zipCode" {...field} />
                     <ErrorMessage name='zipCode' />
                   </div>
                 )}
               </Field>
-              <button type="submit" disabled={isSubmitting}>
-                Continue
-              </button>
+              
+              <div className={styles.continueContainer}>
+                <button className={styles.continue} type="submit" disabled={isSubmitting} 
+                onClick={(e) => {
+                  handleLink(e);
+                }}
+                >
+                  Continue
+                </button>
+              </div>
+
             </Form>
           )}
           </Formik>

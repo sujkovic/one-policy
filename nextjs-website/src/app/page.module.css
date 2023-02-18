@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   background-color: white;
-  height: 85vh;
+  height: 87vh;
 }
 
 .Home {
@@ -120,7 +120,8 @@
 }
 
 .home_main_text_subtitle {
-  color: #98B4AA;
+  /* color: #98B4AA; */
+  color: rgb(61, 61, 61);
 }
 
 .home_sub {
