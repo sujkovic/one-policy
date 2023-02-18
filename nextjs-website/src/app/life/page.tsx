@@ -4,6 +4,8 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import styles from './page.module.css'
 import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { format } from 'path';
 
 export interface Values {
   gender: string;
@@ -37,6 +39,8 @@ const LifeForm: React.FC = () => {
   const handleLink = () => {
     router.push('/life/more-details');
   };
+
+  let valuesFinal: Values;
 
   return (
     <div className={styles.main}>
@@ -140,13 +144,24 @@ const LifeForm: React.FC = () => {
               </Field>
               
               <div className={styles.continueContainer}>
-                <button className={styles.continue} type="submit" disabled={isSubmitting} 
+                {/* <button className={styles.continue} type="submit" disabled={isSubmitting} 
                 onClick={(e) => {
                   handleLink(e);
                 }}
                 >
                   Continue
-                </button>
+                </button> */}
+                <Link className={styles.continue} onClick={(values) => {
+                  
+                }} 
+                href={{
+                  pathname: '/life/more-details',
+                  query: {
+                    values: valuesFinal.gender + " " + valuesFinal.age + " " + valuesFinal.zipCode
+                  }
+                }}>
+                  Continue
+                </Link>
               </div>
 
             </Form>
