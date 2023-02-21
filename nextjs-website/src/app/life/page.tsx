@@ -154,12 +154,13 @@ const LifeForm: React.FC = () => {
                 <Link className={styles.continue} onClick={(values) => {
                   
                 }} 
-                href={{
-                  pathname: '/life/more-details',
-                  query: {
-                    values: valuesFinal.gender + " " + valuesFinal.age + " " + valuesFinal.zipCode
-                  }
-                }}>
+                // href={{
+                //   pathname: '/life/more-details',
+                //   query: {
+                //     values: valuesFinal.gender + " " + valuesFinal.age + " " + valuesFinal.zipCode
+                //   }
+                // }}>
+                href="/life/more-details">
                   Continue
                 </Link>
               </div>
